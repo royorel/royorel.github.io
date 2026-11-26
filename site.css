@@ -1,0 +1,88 @@
+/* Layout and colors after https://jjparkcv.github.io/ */
+
+:root {
+  --navy: #134074;
+  --ink: #0b2545;
+  --slate: #8da9c4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 3.5rem 16px 2rem;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+main { max-width: 1080px; margin: 0 auto; }
+
+a { color: var(--slate); font-weight: 700; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2 { color: var(--navy); font-weight: 700; }
+h1 { font-size: 2.5rem; margin: 0 0 1rem; line-height: 1.2; }
+h2 { font-size: 2.25rem; letter-spacing: .08rem; text-align: center; margin: 0 0 2rem; }
+
+hr { margin: 2.5rem 0; border: 0; border-top: 1px solid var(--slate); }
+
+.icon { color: var(--slate); padding-right: 8px; }
+
+/* Header */
+
+.intro { display: flex; gap: 2.5rem; align-items: flex-start; }
+.intro .photo { flex: 0 0 32%; }
+.intro .photo img { width: 100%; border-radius: 50%; display: block; }
+.intro .about { flex: 1; }
+.email { font-size: 1.4rem; font-weight: 400; margin: 0 0 1.25rem; }
+
+.pill {
+  display: inline-block;
+  padding: .5rem 1rem;
+  margin: 1.5rem 1rem .75rem 0;
+  border: 2px solid var(--navy);
+  border-radius: 25rem;
+  color: var(--navy);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+.pill:hover { background: #f0f4f8; text-decoration: none; }
+
+/* Publications */
+
+.paper { display: flex; gap: 2rem; align-items: center; margin-bottom: 2.5rem; }
+.paper .thumb { flex: 0 0 33%; display: flex; justify-content: center; }
+.paper .thumb img { width: 100%; max-width: 350px; height: auto; display: block; }
+.paper .body { flex: 1; }
+.paper h3 { font-size: 1.5rem; font-weight: 500; line-height: 1.4; margin: 0 0 .5rem; }
+.authors { font-size: 1.1rem; margin: 0 0 .75rem; line-height: 1.6; }
+.note { color: #b03a2e; font-weight: 400; }
+
+.pill.small {
+  padding: .4rem .75rem;
+  margin: 0 .6rem .6rem 0;
+  border-width: 1px;
+  font-size: .9rem;
+  letter-spacing: .05rem;
+  text-transform: none;
+}
+
+footer { text-align: center; font-size: .9rem; margin-top: 3rem; }
+
+/* Phone width: everything in one column */
+
+@media (max-width: 720px) {
+  body { padding-top: 2rem; font-size: 1.05rem; }
+  .intro, .paper { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .intro .photo { flex-basis: auto; width: 60%; max-width: 240px; margin: 0 auto; }
+  .paper .thumb { flex-basis: auto; }
+  h1 { font-size: 2rem; text-align: center; }
+  .email { font-size: 1.15rem; text-align: center; }
+  .pill { margin: .5rem .5rem .25rem 0; }
+}
