@@ -1,0 +1,174 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="rgbd_fusion_files/filelist.xml">
+<link rel=Edit-Time-Data href="rgbd_fusion_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>RGBD-Fusion</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Roy Or-El</o:Author>
+  <o:LastAuthor>Roy Or-El</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>17</o:TotalTime>
+  <o:Created>2015-04-16T21:29:00Z</o:Created>
+  <o:LastSaved>2015-04-16T21:29:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>288</o:Words>
+  <o:Characters>1644</o:Characters>
+  <o:Lines>13</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1929</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="rgbd_fusion_files/themedata.thmx">
+<link rel=colorSchemeMapping href="rgbd_fusion_files/colorschememapping.xml">
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center'><span style='font-size:32.0pt'>Geometric Image
+Processing Lab</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center'><b><span style='font-size:36.0pt'>RGBD-Fusion:
+Real-Time High Precision Depth Recovery</span></b></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center'><span style='font-size:32.0pt'>CVPR 2015</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center'><span style='font-size:24.0pt'>Roy <span class=GramE><span
+class=grame>Or</span></span> – El<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guy
+Rosman<sup>2</sup>&nbsp;&nbsp; &nbsp;&nbsp;Aaron Wetzler<sup>1</sup>&nbsp;
+&nbsp;&nbsp;&nbsp;Ron Kimmel<sup>1</sup>&nbsp;&nbsp; &nbsp;&nbsp;Alfred M.
+Bruckstein<sup>1</sup></span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center'><sup>1</sup><span
+style='font-size:24.0pt'>Technion – Israel Institute of Technology</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center'><sup>2</sup><span
+style='font-size:24.0pt'>Computer Science and Artificial Intelligence Lab, MIT</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center'><span style='mso-no-proof:yes'><img width=1113
+height=480 id="_x0000_i1025" src="projectpage/image001.jpg"></span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center'><b><span style='font-size:28.0pt'>Abstract</span></b></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:150.0pt;margin-bottom:
+0in;margin-left:150.0pt;margin-bottom:.0001pt;text-autospace:none'><span
+style='font-size:16.0pt'>The popularity of low-cost RGB-D scanners is
+increasing on a daily basis. Nevertheless, existing scanners often cannot
+capture subtle details in the environment. We present a novel method to enhance
+the depth map by fusing the intensity and depth information to create more
+detailed range profiles. The lighting model we use can handle natural scene
+illumination. It is integrated in a shape from shading like technique to
+improve the visual fidelity of the reconstructed object. Unlike previous
+efforts in this domain, the detailed geometry is calculated directly, without
+the need to explicitly find and integrate surface <span class=SpellE><span
+class=spelle>normals</span></span>. In addition, the proposed method operates
+four orders of magnitude faster than the state of the art. Qualitative and
+quantitative visual and statistical evidence support the improvement in the
+depth obtained by the suggested method.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;text-autospace:none'><span
+style='font-size:10.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto; text-align:center; text-autospace:none'><b><span style='font-size:28.0pt'>Video<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center;
+text-autospace:none'><span style='font-size:14.0pt'>
+
+<center><iframe width=1120 height=630 
+ src="https://www.youtube.com/embed/5nLnOTyrd-s?rel=0" frameborder=0
+ allowfullscreen>
+</iframe></center>
+
+&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center;text-autospace:none'><b><span style='font-size:28.0pt'>Publications<o:p></o:p></span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:173.25pt;
+margin-bottom:0in;margin-left:166.5pt;margin-bottom:.0001pt;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo2;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:16.0pt;font-family:"Calibri","sans-serif";mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+minor-latin'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span dir=LTR></span><span style='font-size:
+16.0pt;font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin'>RGBD-Fusion: Real-Time High Precision Depth
+Recovery. Roy Or-El, Guy <span class=SpellE><span class=spelle><span
+style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin'>Rosman</span></span></span>, Aaron <span
+class=SpellE><span class=spelle><span style='font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin'>Wetzler</span></span></span>,
+Ron Kimmel, Alfred M. <span class=SpellE><span class=spelle><span
+style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:minor-latin;
+mso-hansi-theme-font:minor-latin'>Bruckstein</span></span></span>. In
+proceedings of IEEE Conference on Computer Vision and Pattern Recognition
+(CVPR), 2015. </span><span style='font-size:16.0pt'><a
+href="projectpage/rgbd_fusion.pdf" target="_blank">[pdf]</a> <a
+href="projectpage/rgbd_fusion_ext.pdf" target="_blank">[extended abstract]</a> <a
+href="rgbd_fusion_bib.bib" target="_blank" title=bibtex>[bibtex]</a></span><span
+style='font-size:16.0pt;font-family:"Calibri","sans-serif";mso-ascii-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+auto;text-align:center;text-autospace:none'><b><span style='font-size:28.0pt'>Code<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:148.5pt;text-autospace:none'><span
+style='font-size:16.0pt;font-family:"Calibri","sans-serif";mso-ascii-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin'>A <span class=SpellE><span
+class=spelle><span style='font-family:"Calibri","sans-serif";mso-ascii-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin'>Matlab</span></span></span> demo
+of our method for evaluation and comparisons can be downloaded here:</span><span
+style='font-size:16.0pt'>&nbsp;<a href="projectpage/rgbd_fusion.zip">[code]</a></span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center;
+text-autospace:none'><span style='font-size:16.0pt;font-family:"Calibri","sans-serif";
+mso-ascii-theme-font:minor-latin;mso-hansi-theme-font:minor-latin'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center;
+text-autospace:none'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center;
+text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;text-autospace:none'><span
+style='font-size:10.0pt;font-family:"NimbusRomNo9L-ReguItal","serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='mso-margin-top-alt:auto;text-align:center;
+text-autospace:none'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
